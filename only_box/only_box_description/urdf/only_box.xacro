@@ -1,0 +1,28 @@
+<?xml version="1.0" ?>
+<robot name="only_box" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find only_box_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find only_box_description)/urdf/only_box.trans" />
+<xacro:include filename="$(find only_box_description)/urdf/only_box.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.0 0.0 0.025"/>
+    <mass value="5.3999999999999995"/>
+    <inertia ixx="0.019125" ixy="0.0" ixz="0.0" iyy="0.019125" iyz="0.0" izz="0.036"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://only_box_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://only_box_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+</robot>
